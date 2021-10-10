@@ -15,14 +15,22 @@ const Navbar = () => {
 					<li className='nav-item'>
 						{!isAuth && (
 							<div className='nav-link'>
-								<NavLink to='/login'>Login</NavLink>
+								<NavLink to='/login'>
+									<span style={{ fontWeight: 'bold', fontSize: 'large' }}>
+										Login
+									</span>
+								</NavLink>
 							</div>
 						)}
 					</li>
 					<li className='nav-item'>
 						{!isAuth && (
 							<div className='nav-link'>
-								<NavLink to='/registration'>Registration</NavLink>
+								<NavLink to='/registration'>
+									<span style={{ fontWeight: 'bold', fontSize: 'large' }}>
+										Registration
+									</span>
+								</NavLink>
 							</div>
 						)}
 					</li>

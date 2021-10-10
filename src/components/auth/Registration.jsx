@@ -9,7 +9,11 @@ const Registration = () => {
 
 	return (
 		<div className='authorization'>
-			<div className='authorization_header'>Registration</div>
+			<div className='authorization_header'>
+				<span style={{ fontWeight: 'bold', fontSize: 'large' }}>
+					Registration
+				</span>
+			</div>
 			<form>
 				<div className='mb-3'>
 					<label className='form-label'>Email address</label>

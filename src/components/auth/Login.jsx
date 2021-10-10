@@ -10,7 +10,9 @@ const Login = () => {
 
 	return (
 		<div className='authorization'>
-			<div className='authorization_header'>Login</div>
+			<div className='authorization_header'>
+				<span style={{ fontWeight: 'bold', fontSize: 'large' }}>Login</span>
+			</div>
 			<form>
 				<div className='mb-3'>
 					<label className='form-label'>Email address</label>
