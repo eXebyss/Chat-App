@@ -26,15 +26,15 @@ const Navbar = () => {
 							</div>
 						)}
 					</li>
-					<li className='nav-link'>
-						{isAuth && (
+					{isAuth && (
+						<li className='nav-link'>
 							<button
 								className='btn btn-danger'
 								onClick={() => dispatch(logout())}>
 								Logout
 							</button>
-						)}
-					</li>
+						</li>
+					)}
 				</ul>
 			</nav>
 		</div>

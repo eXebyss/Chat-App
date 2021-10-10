@@ -4,6 +4,7 @@ import { registration } from '../../actions/user.action'
 
 const Registration = () => {
 	const [email, setEmail] = useState('')
+	const [nickname, setNickname] = useState('')
 	const [password, setPassword] = useState('')
 
 	return (
@@ -23,6 +24,16 @@ const Registration = () => {
 					/>
 				</div>
 				<div className='mb-3'>
+					<label className='form-label'>Nickname</label>
+					<Input
+						value={nickname}
+						setValue={setNickname}
+						type='text'
+						className='form-control'
+						placeholder='Input your nickname...'
+					/>
+				</div>
+				<div className='mb-3'>
 					<label className='form-label'>Password</label>
 					<Input
 						value={password}
@@ -36,7 +47,7 @@ const Registration = () => {
 				<button
 					type='button'
 					className='btn btn-primary'
-					onClick={() => registration(email, password)}>
+					onClick={() => registration(email, nickname, password)}>
 					Register
 				</button>
 			</form>

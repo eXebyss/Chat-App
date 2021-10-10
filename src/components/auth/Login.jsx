@@ -10,7 +10,7 @@ const Login = () => {
 
 	return (
 		<div className='authorization'>
-			<div className='authorization_header'>Authorization</div>
+			<div className='authorization_header'>Login</div>
 			<form>
 				<div className='mb-3'>
 					<label className='form-label'>Email address</label>

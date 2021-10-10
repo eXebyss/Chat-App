@@ -2,10 +2,11 @@ import axios from 'axios'
 import { setUser } from '../reducers/user.reducer'
 import { API_URL } from '../config.js'
 
-export const registration = async (email, password) => {
+export const registration = async (email, nickname, password) => {
 	try {
 		const response = await axios.post(`${API_URL}api/auth/registration`, {
 			email,
+			nickname,
 			password,
 		})
 		alert(response.data.message)
@@ -38,7 +39,7 @@ export const auth = () => {
 			dispatch(setUser(response.data.user))
 			localStorage.setItem('token', response.data.token)
 		} catch (e) {
-			alert(e.response.data.message)
+			console.log(e.response.data.message)
 			localStorage.removeItem('token')
 		}
 	}
