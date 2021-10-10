@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { auth } from '../actions/user.action'
-import Registration from './auth/Registration'
-import Login from './auth/Login'
-import Profile from './profile/Profile'
-import Navbar from './navbar/Navbar'
+import { auth } from '../../actions/user.action'
+import Registration from '../auth/Registration'
+import Login from '../auth/Login'
+import Profile from '../profile/Profile'
+import Navbar from '../navbar/Navbar'
 import './App.css'
 
 function App() {
