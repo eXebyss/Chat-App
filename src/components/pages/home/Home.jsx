@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 // import { allPosts } from '../../../actions/post.action'
 // import PostList from '../../postList/PostList'
 // import Posts from '../posts/Posts'

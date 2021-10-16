@@ -14,7 +14,7 @@ const Posts = () => {
 	useEffect(() => {
 		console.log('posts:')
 		dispatch(allPosts())
-	}, [])
+	})
 
 	return (
 		<div className='posts'>
