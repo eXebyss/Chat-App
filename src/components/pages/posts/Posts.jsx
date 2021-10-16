@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { allPosts, createPost } from '../../../actions/post.action'
 import PostList from '../../postList/PostList'
 import Input from '../../../utils/input/Input'
+import './Post.css'
 
 const Posts = () => {
 	const userInfo = useSelector(state => state.user.currentUser)

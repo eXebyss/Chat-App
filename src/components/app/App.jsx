@@ -21,7 +21,7 @@ function App() {
 		<BrowserRouter>
 			<div className='App container'>
 				<Navbar />
-				<div className='routes'>
+				<div className='routes container'>
 					{!isAuth ? (
 						<Switch>
 							<Route path='/registration' component={Registration} />
