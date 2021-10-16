@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { auth } from '../../actions/user.action'
 import Registration from '../auth/Registration'
 import Login from '../auth/Login'
-import Profile from '../profile/Profile'
+import Home from '../pages/home/Home'
 import Navbar from '../navbar/Navbar'
+import Posts from '../pages/posts/Posts'
 import './App.css'
 
 function App() {
-	const isAuth = useSelector(state => state.user.isAuth)	
+	const isAuth = useSelector(state => state.user.isAuth)
 	const dispatch = useDispatch()
 
 	useEffect(() => {
@@ -29,7 +30,8 @@ function App() {
 						</Switch>
 					) : (
 						<Switch>
-							<Route path='/login' component={Profile} />
+							<Route path='/login' component={Home} />
+							<Route path='/posts' component={Posts} />
 						</Switch>
 					)}
 				</div>

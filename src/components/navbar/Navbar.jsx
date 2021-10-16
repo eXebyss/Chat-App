@@ -34,6 +34,28 @@ const Navbar = () => {
 							</div>
 						)}
 					</li>
+					<li className='nav-item'>
+						{isAuth && (
+							<div className='nav-link'>
+								<NavLink to='/login'>
+									<span style={{ fontWeight: 'bold', fontSize: 'large' }}>
+										Home
+									</span>
+								</NavLink>
+							</div>
+						)}
+					</li>
+					<li className='nav-item'>
+						{isAuth && (
+							<div className='nav-link'>
+								<NavLink to='/posts'>
+									<span style={{ fontWeight: 'bold', fontSize: 'large' }}>
+										View all posts
+									</span>
+								</NavLink>
+							</div>
+						)}
+					</li>
 					{isAuth && (
 						<li className='nav-link'>
 							<button
