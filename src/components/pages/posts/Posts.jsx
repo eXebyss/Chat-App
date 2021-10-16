@@ -13,8 +13,8 @@ const Posts = () => {
 
 	useEffect(() => {
 		console.log('posts:')
-		dispatch(allPosts(), [])
-	})
+		dispatch(allPosts())
+	}, [])
 
 	return (
 		<div className='posts'>
