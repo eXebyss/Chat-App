@@ -20,7 +20,7 @@ const Posts = () => {
 		<div className='posts'>
 			<div className='create-post'>
 				<div className='mb-3'>
-					<label className='form-label'>Content</label>
+					<label className='form-label'>New Message</label>
 					<Input
 						value={content}
 						setValue={setContent}
