@@ -50,7 +50,7 @@ const Navbar = () => {
 							<div className='nav-link'>
 								<NavLink to='/posts'>
 									<span style={{ fontWeight: 'bold', fontSize: 'large' }}>
-										View all posts
+										Chat
 									</span>
 								</NavLink>
 							</div>

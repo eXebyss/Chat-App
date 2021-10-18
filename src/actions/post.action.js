@@ -6,7 +6,8 @@ export const allPosts = () => {
 	return async dispatch => {
 		try {
 			const response = await axios.get(`${API_URL}api/post/get-posts`)
-			console.log('Log1:', response.data)
+			// console.log('posts:')
+			// console.log('Log1:', response.data)
 			dispatch(setPosts(response.data))
 		} catch (e) {
 			alert(e.response.data.message)

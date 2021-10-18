@@ -13,9 +13,13 @@ const Posts = () => {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		console.log('posts:')
 		dispatch(allPosts())
 	}, [])
+
+	const handleClickToCreatePost = () => {
+		createPost(userInfo.nickname, content)
+		setContent('')
+	}
 
 	return (
 		<div className='posts'>
@@ -33,8 +37,8 @@ const Posts = () => {
 				<button
 					type='button'
 					className='btn btn-primary'
-					onClick={() => createPost(userInfo.nickname, content)}>
-					Post
+					onClick={handleClickToCreatePost}>
+					Send
 				</button>
 			</div>
 			<div className='posts-all'>
