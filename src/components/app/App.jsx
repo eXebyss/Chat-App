@@ -6,7 +6,7 @@ import Registration from '../auth/Registration'
 import Login from '../auth/Login'
 import Home from '../pages/home/Home'
 import Navbar from '../navbar/Navbar'
-import Posts from '../pages/posts/Posts'
+import Message from '../pages/message/Message'
 import './App.css'
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
 					) : (
 						<Switch>
 							<Route path='/login' component={Home} />
-							<Route path='/posts' component={Posts} />
+							<Route path='/messages' component={Message} />
 						</Switch>
 					)}
 				</div>

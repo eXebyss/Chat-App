@@ -48,7 +48,7 @@ const Navbar = () => {
 					<li className='nav-item'>
 						{isAuth && (
 							<div className='nav-link'>
-								<NavLink to='/posts'>
+								<NavLink to='/messages'>
 									<span style={{ fontWeight: 'bold', fontSize: 'large' }}>
 										Chat
 									</span>

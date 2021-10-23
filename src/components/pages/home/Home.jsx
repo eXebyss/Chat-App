@@ -1,28 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-// import { allPosts } from '../../../actions/post.action'
-// import PostList from '../../postList/PostList'
-// import Posts from '../posts/Posts'
 
 const Home = () => {
 	const userInfo = useSelector(state => state.user.currentUser)
-	// const posts = useSelector(state => state.posts.currentPosts)
-	// const postsActive = useSelector(state => state.posts.isActive)
-	// const dispatch = useDispatch()
-
-	// useEffect(() => {
-	// 	console.log('posts:')
-	// 	const fetchData = async () => {
-	// 		const result = await allPosts()
-	// 		console.log('Log2:', result.data[1].content)
-	// 	}
-	// 	fetchData()
-	// }, [])
-
-	// useEffect(() => {
-	// 	console.log('posts:')
-	// 	dispatch(allPosts())
-	// }, [])
 
 	return (
 		<div className='some_text container'>

@@ -1,9 +1,8 @@
 import React from 'react'
-import './PostCard.css'
 
-function PostCard(props) {
+function MessageCard(props) {
 	return (
-		<li className='post-card list-group-item'>
+		<li className='message-card list-group-item'>
 			<div className='ms-2 bg-info'>
 				<span style={{ color: 'green', fontWeight: 'bold', fontSize: 'large' }}>
 					{props.data.nickname}:
@@ -14,4 +13,4 @@ function PostCard(props) {
 	)
 }
 
-export default PostCard
+export default MessageCard

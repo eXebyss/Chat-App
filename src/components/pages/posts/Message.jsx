@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { allPosts, createPost } from '../../../actions/post.action'
-import PostList from '../../postList/PostList'
+import { getMessage, createMessage } from '../../../actions/message.action'
+import PostList from '../../messageList/MessageList'
 import Input from '../../../utils/input/Input'
 import './Post.css'
 
@@ -13,11 +13,24 @@ const Posts = () => {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		dispatch(allPosts())
+		subscribe()
 	}, [])
 
+	const subscribe = async () => {
+		console.log('Fetching and dispatching messages...')
+		try {
+			await dispatch(getMessage())
+			subscribe()
+		} catch (e) {
+			console.log(e, 'Error in subscribe method 1!')
+			setTimeout(() => {
+				subscribe()
+			}, 500)
+		}
+	}
+
 	const handleClickToCreatePost = () => {
-		createPost(userInfo.nickname, content)
+		createMessage(userInfo.nickname, content)
 		setContent('')
 	}
 
@@ -45,7 +58,7 @@ const Posts = () => {
 				<button
 					type='button'
 					className='btn btn-primary'
-					onClick={() => dispatch(allPosts())}>
+					onClick={() => dispatch(getMessage())}>
 					Refresh Posts
 				</button>
 				<div className='posts-li'>
