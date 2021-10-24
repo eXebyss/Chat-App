@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getMessage, createMessage } from '../../../actions/message.action'
+import {
+	getMessages,
+	getMessagesLongPolling,
+	createMessage,
+} from '../../../actions/message.action'
 import MessageList from '../../messageList/MessageList'
 import Input from '../../../utils/input/Input'
 import './Message.css'
@@ -13,12 +17,16 @@ const Message = () => {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
+		dispatch(getMessages())
+	}, [])
+
+	useEffect(() => {
 		subscribe()
 	}, [])
 
-	const subscribe = async () => {		
+	const subscribe = async () => {
 		try {
-			await dispatch(getMessage())
+			await dispatch(getMessagesLongPolling())
 			subscribe()
 		} catch (e) {
 			console.log(e, 'Error in subscribe method 1!')
@@ -37,6 +45,7 @@ const Message = () => {
 		<div className='messages'>
 			<div className='create-message'>
 				<div className='mb-3'>
+					<h5>Long Polling</h5>
 					<label className='form-label'>New Message</label>
 					<Input
 						value={content}
@@ -57,7 +66,7 @@ const Message = () => {
 				<button
 					type='button'
 					className='btn btn-primary'
-					onClick={() => dispatch(getMessage())}>
+					onClick={() => dispatch(getMessages())}>
 					Refresh Messages
 				</button>
 				<div className='messages-li'>

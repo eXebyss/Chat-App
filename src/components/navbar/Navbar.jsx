@@ -50,7 +50,7 @@ const Navbar = () => {
 							<div className='nav-link'>
 								<NavLink to='/messages'>
 									<span style={{ fontWeight: 'bold', fontSize: 'large' }}>
-										Chat
+										Chat(LP)
 									</span>
 								</NavLink>
 							</div>
