@@ -1,0 +1,59 @@
+/* Chat containers */
+.message-container {
+	border: 2px solid #dedede;
+	background-color: #f1f1f1;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px 0;
+
+	::after {
+		content: '';
+		clear: both;
+		display: table;
+	}
+
+	// img {
+	// 	float: left;
+	// 	max-width: 60px;
+	// 	width: 100%;
+	// 	margin-right: 20px;
+	// 	border-radius: 50%;
+
+	// 	.right {
+	// 		float: right;
+	// 		margin-left: 20px;
+	// 		margin-right: 0;
+	// 	}
+	// }
+}
+
+.message-nickname {
+	float: left;
+}
+
+// /* Darker chat container */
+// .darker {
+// 	border-color: #ccc;
+// 	background-color: #ddd;
+// }
+
+// /* Clear floats */
+// .container
+
+// /* Style images */
+// .container
+
+// /* Style the right image */
+// .container img
+
+/* Style time text */
+.time-right {
+	float: right;
+	color: #aaa;
+}
+
+// /* Style time text */
+// .time-left {
+// 	float: left;
+// 	color: #999;
+// }

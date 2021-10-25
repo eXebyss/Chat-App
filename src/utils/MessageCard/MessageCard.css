@@ -1,0 +1,25 @@
+/* Chat containers */
+.message-container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.message-container ::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.message-nickname {
+  float: left;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+/*# sourceMappingURL=MessageCard.css.map */
