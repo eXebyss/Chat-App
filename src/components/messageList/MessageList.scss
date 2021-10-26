@@ -1,8 +1,13 @@
-.messages {
-    ul {
-        li {
-            margin-top: 5px;
-            margin-bottom: 5px;            
-        }
-    }
+.message-list {
+	.message-card {
+		div:nth-child(even) {
+			background-color: #c1d4eb;
+			border-color: rgb(150, 124, 192);
+		}
+
+		div:nth-child(odd) {
+			background-color: lightblue;
+			border-color: #b6f0f0;
+		}
+	}
 }

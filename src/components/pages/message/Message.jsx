@@ -69,9 +69,9 @@ const Message = () => {
 					onClick={() => dispatch(getMessages())}>
 					Refresh Messages
 				</button>
-				<div className='messages-li'>
-					{messagesActive ? <MessageList messages={messages} /> : ''}
-				</div>
+			</div>
+			<div className='message-list'>
+				{messagesActive ? <MessageList messages={messages} /> : ''}
 			</div>
 		</div>
 	)

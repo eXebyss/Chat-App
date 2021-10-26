@@ -1,5 +1,11 @@
 /* Chat containers */
 .message-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5% 95%;
+      grid-template-columns: 5% 95%;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
   border: 2px solid #dedede;
   background-color: #f1f1f1;
   border-radius: 5px;
@@ -13,13 +19,16 @@
   display: table;
 }
 
-.message-nickname {
+.message-container img {
   float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+  background: white;
 }
 
-/* Style time text */
-.time-right {
-  float: right;
-  color: #aaa;
+.message-container .time-right {
+  color: grey;
 }
 /*# sourceMappingURL=MessageCard.css.map */

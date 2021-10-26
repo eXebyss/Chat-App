@@ -1,5 +1,8 @@
 /* Chat containers */
 .message-container {
+	display: grid;
+	grid-template-columns: 5% 95%;
+	grid-template-rows: auto auto;
 	border: 2px solid #dedede;
 	background-color: #f1f1f1;
 	border-radius: 5px;
@@ -12,48 +15,16 @@
 		display: table;
 	}
 
-	// img {
-	// 	float: left;
-	// 	max-width: 60px;
-	// 	width: 100%;
-	// 	margin-right: 20px;
-	// 	border-radius: 50%;
+	img {
+		float: left;
+		max-width: 60px;
+		width: 100%;
+		margin-right: 20px;
+		border-radius: 50%;
+		background: white;
+	}
 
-	// 	.right {
-	// 		float: right;
-	// 		margin-left: 20px;
-	// 		margin-right: 0;
-	// 	}
-	// }
+	.time-right {
+		color: grey;
+	}
 }
-
-.message-nickname {
-	float: left;
-}
-
-// /* Darker chat container */
-// .darker {
-// 	border-color: #ccc;
-// 	background-color: #ddd;
-// }
-
-// /* Clear floats */
-// .container
-
-// /* Style images */
-// .container
-
-// /* Style the right image */
-// .container img
-
-/* Style time text */
-.time-right {
-	float: right;
-	color: #aaa;
-}
-
-// /* Style time text */
-// .time-left {
-// 	float: left;
-// 	color: #999;
-// }
