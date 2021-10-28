@@ -4,13 +4,20 @@ import avatar from '../../images/avatar-minion.png'
 
 function MessageCard(props) {
 	const isoDate = props.data.date
-	const date = new Date(isoDate).toLocaleString()
+	const minutes = new Date(isoDate).getMinutes()
+	const hours = new Date(isoDate).getHours()
+	const day = new Date(isoDate).getDate()
+	const month = new Date(isoDate).getMonth() + 1
+	const year = new Date(isoDate).getFullYear()
+	const date = `${hours}:${minutes} ${month}/${day}/${year}`
 
 	return (
 		<div className='message-container'>
-			<img src={avatar} alt='Avatar' />
+			<div className='logo-nickname'>
+				<img src={avatar} alt='Avatar' />
+				<h5 className='message-nickname'>{props.data.nickname}</h5>
+			</div>
 			<p className='message-content'>{props.data.content}</p>
-			<h5 className='message-nickname'>{props.data.nickname}</h5>
 			<span className='time-right'>{date}</span>
 		</div>
 	)

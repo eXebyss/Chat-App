@@ -1,9 +1,10 @@
 /* Chat containers */
 .message-container {
+      grid-template-areas: 'logo-nickname message-content' 'logo-nickname time-right';
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 5% 95%;
-      grid-template-columns: 5% 95%;
+  -ms-grid-columns: 100px auto;
+      grid-template-columns: 100px auto;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
   border: 2px solid #dedede;
@@ -20,15 +21,51 @@
 }
 
 .message-container img {
-  float: left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 60px;
   width: 100%;
-  margin-right: 20px;
   border-radius: 50%;
   background: white;
 }
 
 .message-container .time-right {
   color: grey;
+}
+
+.message-container span {
+  text-align: right;
+}
+
+.message-container h5 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.message-container p {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-nickname {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: logo-nickname;
+}
+
+.message-content {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: message-content;
+}
+
+.time-right {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: time-right;
 }
 /*# sourceMappingURL=MessageCard.css.map */
