@@ -1,5 +1,5 @@
 import React from 'react'
-import MessageCard from '../../utils/MessageCard/MessageCard'
+import MessageCard from '../MessageCard/MessageCard'
 import './MessageList.css'
 
 function MessageList(props) {
