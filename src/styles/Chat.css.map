@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "AAAA,AACC,SADQ,CACR,MAAM,CAAC;EACN,UAAU,EAAE,GAAG;EACf,aAAa,EAAE,GAAG;CAClB",
     "sources": [
-        "Message.scss"
+        "Chat.scss"
     ],
     "names": [],
-    "file": "Message.css"
+    "file": "Chat.css"
 }

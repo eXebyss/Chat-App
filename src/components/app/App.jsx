@@ -6,8 +6,9 @@ import Registration from '../auth/Registration'
 import Login from '../auth/Login'
 import Home from '../pages/home/Home'
 import Navbar from '../navbar/Navbar'
-import Message from '../pages/message/Message'
-import './App.css'
+import ChatLP from '../pages/ChatLP/ChatLP'
+import ChatWS from '../pages/ChatWS/ChatWS'
+import '../../styles/App.css'
 
 function App() {
 	const isAuth = useSelector(state => state.user.isAuth)
@@ -31,7 +32,8 @@ function App() {
 					) : (
 						<Switch>
 							<Route path='/login' component={Home} />
-							<Route path='/messages' component={Message} />
+							<Route path='/chat-lp' component={ChatLP} />
+							<Route path='/chat-ws' component={ChatWS} />
 						</Switch>
 					)}
 				</div>

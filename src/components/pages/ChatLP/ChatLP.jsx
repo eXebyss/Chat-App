@@ -7,9 +7,9 @@ import {
 } from '../../../actions/message.action'
 import MessageList from '../../messageList/MessageList'
 import Input from '../../../utils/input/Input'
-import './Message.css'
+import '../../../styles/Chat.css'
 
-const Message = () => {
+const ChatLP = () => {
 	const userInfo = useSelector(state => state.user.currentUser)
 	const messages = useSelector(state => state.messages.currentMessages)
 	const messagesActive = useSelector(state => state.messages.isActive)
@@ -77,4 +77,4 @@ const Message = () => {
 	)
 }
 
-export default Message
+export default ChatLP

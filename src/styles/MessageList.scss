@@ -1,0 +1,29 @@
+.message-list {
+	background-color: rgb(248, 249, 250);
+
+	.message-card {
+		div.message-container:nth-child(even) {
+			background-color: #c1d4eb;
+			border-color: rgb(150, 124, 192);
+		}
+
+		div.message-container:nth-child(odd) {
+			background-color: lightblue;
+			border-color: #b6f0f0;
+		}
+
+		.message-card-ws:nth-child(even) {
+			div.message-container {
+				background-color: rgb(238, 230, 255);
+				border-color: rgb(150, 124, 192);
+			}
+		}
+
+		.message-card-ws:nth-child(odd) {
+			div.message-container {
+				background-color: rgb(212, 236, 255);
+				border-color: rgb(0, 132, 172);
+			}
+		}
+	}
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import MessageCard from '../MessageCard/MessageCard'
-import './MessageList.css'
+import '../../styles/MessageList.css'
 
 function MessageList(props) {
 	return (

@@ -1,0 +1,24 @@
+.message-list {
+  background-color: #f8f9fa;
+}
+
+.message-list .message-card div.message-container:nth-child(even) {
+  background-color: #c1d4eb;
+  border-color: #967cc0;
+}
+
+.message-list .message-card div.message-container:nth-child(odd) {
+  background-color: lightblue;
+  border-color: #b6f0f0;
+}
+
+.message-list .message-card .message-card-ws:nth-child(even) div.message-container {
+  background-color: #eee6ff;
+  border-color: #967cc0;
+}
+
+.message-list .message-card .message-card-ws:nth-child(odd) div.message-container {
+  background-color: #d4ecff;
+  border-color: #0084ac;
+}
+/*# sourceMappingURL=MessageList.css.map */

@@ -48,9 +48,20 @@ const Navbar = () => {
 					<li className='nav-item'>
 						{isAuth && (
 							<div className='nav-link'>
-								<NavLink to='/messages'>
+								<NavLink to='/chat-lp'>
 									<span style={{ fontWeight: 'bold', fontSize: 'large' }}>
 										Chat(LP)
+									</span>
+								</NavLink>
+							</div>
+						)}
+					</li>
+					<li className='nav-item'>
+						{isAuth && (
+							<div className='nav-link'>
+								<NavLink to='/chat-ws'>
+									<span style={{ fontWeight: 'bold', fontSize: 'large' }}>
+										Chat(WS)
 									</span>
 								</NavLink>
 							</div>
