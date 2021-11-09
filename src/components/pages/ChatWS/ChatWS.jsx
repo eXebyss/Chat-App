@@ -26,12 +26,12 @@ const ChatWS = () => {
 
 	if (!connected) {
 		return (
-			<div className='center'>
-				<div className='form'>
-					<button onClick={dispatch(connect(socket, userInfo.nickname))}>
-						Login
-					</button>
-				</div>
+			<div className='messages'>
+				<button
+					className='btn btn-primary'
+					onClick={dispatch(connect(socket, userInfo.nickname))}>
+					Login
+				</button>
 			</div>
 		)
 	}
