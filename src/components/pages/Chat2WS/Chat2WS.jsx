@@ -1,21 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import MessageListWS from '../../messageListWS/MessageListWS'
 import Input from '../../../utils/input/Input'
 import { API_URL2 } from '../../../config'
-import {
-	setMessagesWS,
-	setConnected,
-} from '../../../reducers/messageWS.reducer'
 import '../../../styles/Chat.css'
 
 const ChatWS = () => {
 	const userInfo = useSelector(state => state.user.currentUser)
-	const messagesWS = useSelector(state => state.messagesWS.currentMessagesWS)
-	const connected = useSelector(state => state.messagesWS.connected)
+	const [messages, setMessages] = useState([])
+	const [connected, setConnected] = useState(false)
 	const [content, setContent] = useState('')
 	const socket = useRef()
-	const dispatch = useDispatch()
 
 	useEffect(() => {
 		connect()
@@ -25,7 +19,7 @@ const ChatWS = () => {
 		socket.current = new WebSocket(`${API_URL2}websocket`)
 
 		socket.current.onopen = () => {
-			dispatch(setConnected(true))
+			setConnected(true)
 			const message = {
 				event: 'connection',
 				username: userInfo.nickname,
@@ -36,10 +30,10 @@ const ChatWS = () => {
 		}
 		socket.current.onmessage = event => {
 			const message = JSON.parse(event.data)
-			dispatch(setMessagesWS(message))
+			setMessages(prev => [message, ...prev])
 		}
 		socket.current.onclose = () => {
-			dispatch(setConnected(false))
+			setConnected(false)
 			console.log('Socket is closed')
 		}
 		socket.current.onerror = () => {
@@ -47,7 +41,7 @@ const ChatWS = () => {
 		}
 	}
 
-	const sendMessage = () => {
+	const sendMessage = async () => {
 		const message = {
 			event: 'message',
 			username: userInfo.nickname,
@@ -56,10 +50,6 @@ const ChatWS = () => {
 			id: Date.now(),
 		}
 		socket.current.send(JSON.stringify(message))
-	}
-
-	const handleClickToCreateMessagesWS = () => {
-		sendMessage()
 		setContent('')
 	}
 
@@ -78,7 +68,7 @@ const ChatWS = () => {
 			<div className='create-message'>
 				<div className='mb-3'>
 					<h5>
-						Web Socket with{' '}
+						Web Socket without{' '}
 						<span
 							style={{
 								color: 'indigo',
@@ -96,15 +86,40 @@ const ChatWS = () => {
 						placeholder='Enter your message...'
 					/>
 				</div>
-				<button
-					type='button'
-					className='btn btn-primary'
-					onClick={handleClickToCreateMessagesWS}>
+				<button type='button' className='btn btn-primary' onClick={sendMessage}>
 					Send
 				</button>
 			</div>
-			<div className='message-list'>
-				<MessageListWS messages={messagesWS} />
+			<div className='messages message-list'>
+				{messages.map(mess => (
+					<div key={mess.id}>
+						{mess.event === 'connection' ? (
+							<div className='connection-message'>
+								User{' '}
+								<span
+									style={{
+										color: 'green',
+										fontWeight: 'bold',
+										fontSize: 'large',
+									}}>
+									{mess.username}
+								</span>{' '}
+								is connected
+							</div>
+						) : (
+							<div className='message'>
+								<span
+									style={{
+										fontWeight: 'bold',
+										fontSize: 'large',
+									}}>
+									{mess.username}
+								</span>{' '}
+								: {mess.message}
+							</div>
+						)}
+					</div>
+				))}
 			</div>
 		</div>
 	)
