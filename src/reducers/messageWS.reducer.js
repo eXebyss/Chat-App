@@ -12,7 +12,7 @@ const messageWSSlice = createSlice({
 		setMessagesWS: (state, action) => {
 			return {
 				...state,
-				currentMessagesWS: [...state.currentMessagesWS, action.payload],
+				currentMessagesWS: [action.payload, ...state.currentMessagesWS],
 			}
 		},
 		setConnected: (state, action) => {
