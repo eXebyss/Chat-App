@@ -10,6 +10,7 @@ import ChatLP from '../pages/ChatLP/ChatLP'
 import ChatWS from '../pages/ChatWS/ChatWS'
 import Chat2WS from '../pages/Chat2WS/Chat2WS'
 import ChatSocketIO from '../pages/ChatSocketIO/ChatSocketIO'
+import ChatSocketIO2 from '../pages/ChatSocketIO2/ChatSocketIO2'
 import '../../styles/App.css'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
 							<Route path='/chat-ws' component={ChatWS} />
 							<Route path='/chat2-ws' component={Chat2WS} />
 							<Route path='/chat-socket-io' component={ChatSocketIO} />
+							<Route path='/chat2-socket-io' component={ChatSocketIO2} />
 						</Switch>
 					)}
 				</div>
