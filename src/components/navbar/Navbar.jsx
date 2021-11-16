@@ -78,6 +78,17 @@ const Navbar = () => {
 							</div>
 						)}
 					</li>
+					<li className='nav-item'>
+						{isAuth && (
+							<div className='nav-link'>
+								<NavLink to='/chat-socket-io'>
+									<span style={{ fontWeight: 'bold', fontSize: 'large' }}>
+										Chat(SocketIO)
+									</span>
+								</NavLink>
+							</div>
+						)}
+					</li>
 					{isAuth && (
 						<li className='nav-link'>
 							<button

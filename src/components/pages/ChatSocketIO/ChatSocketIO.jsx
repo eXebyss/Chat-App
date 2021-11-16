@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
+import { io } from 'socket.io-client'
 import Input from '../../../utils/input/Input'
-import { API_URL2 } from '../../../config'
+import { API_URL3 } from '../../../config'
 import '../../../styles/Chat.css'
 
-const ChatWS = () => {
+const ChatSocketIO = () => {
 	const userInfo = useSelector(state => state.user.currentUser)
 	const [messages, setMessages] = useState([])
 	const [connected, setConnected] = useState(false)
@@ -16,29 +17,32 @@ const ChatWS = () => {
 	}, [])
 
 	const connect = () => {
-		socket.current = new WebSocket(`${API_URL2}websocket`)
+		socket.current = io(`${API_URL3}`)
 
-		socket.current.onopen = () => {
+		socket.current.on('connect', () => {
 			setConnected(true)
+			console.log(
+				'Socket is opened'
+				// `Statement is: ${socket.current.connected},`,
+				// `current id: ${socket.current.id}`
+			)
 			const message = {
 				event: 'connection',
 				username: userInfo.nickname,
 				id: Date.now(),
 			}
-			socket.current.send(JSON.stringify(message))
-			console.log('Socket is opened')
-		}
-		socket.current.onmessage = event => {
-			const message = JSON.parse(event.data)
+			socket.current.emit('chat-message', JSON.stringify(message))
+		})
+
+		socket.current.on('chat-message', data => {
+			const message = JSON.parse(data)
+			// console.log(message)
 			setMessages(prev => [message, ...prev])
-		}
-		socket.current.onclose = () => {
-			setConnected(false)
-			console.log('Socket is closed')
-		}
-		socket.current.onerror = () => {
-			console.log('Socket error 1')
-		}
+		})
+
+		socket.current.on('error', error => {
+			console.log(error)
+		})
 	}
 
 	const sendMessage = async () => {
@@ -49,7 +53,7 @@ const ChatWS = () => {
 			date: new Date(Date.now()),
 			id: Date.now(),
 		}
-		socket.current.send(JSON.stringify(message))
+		socket.current.emit('chat-message', JSON.stringify(message))
 		setContent('')
 	}
 
@@ -68,7 +72,7 @@ const ChatWS = () => {
 			<div className='create-message'>
 				<div className='mb-3'>
 					<h5>
-						Web Socket without{' '}
+						Socket.IO(WebSocket) without{' '}
 						<span
 							style={{
 								color: 'indigo',
@@ -125,4 +129,4 @@ const ChatWS = () => {
 	)
 }
 
-export default ChatWS
+export default ChatSocketIO

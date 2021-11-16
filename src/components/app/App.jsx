@@ -9,6 +9,7 @@ import Navbar from '../navbar/Navbar'
 import ChatLP from '../pages/ChatLP/ChatLP'
 import ChatWS from '../pages/ChatWS/ChatWS'
 import Chat2WS from '../pages/Chat2WS/Chat2WS'
+import ChatSocketIO from '../pages/ChatSocketIO/ChatSocketIO'
 import '../../styles/App.css'
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
 							<Route path='/chat-lp' component={ChatLP} />
 							<Route path='/chat-ws' component={ChatWS} />
 							<Route path='/chat2-ws' component={Chat2WS} />
+							<Route path='/chat-socket-io' component={ChatSocketIO} />
 						</Switch>
 					)}
 				</div>
