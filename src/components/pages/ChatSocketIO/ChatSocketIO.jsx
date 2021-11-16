@@ -40,6 +40,10 @@ const ChatSocketIO = () => {
 			setMessages(prev => [message, ...prev])
 		})
 
+		socket.current.on('close', reason => {
+			console.log(reason)
+		})
+
 		socket.current.on('error', error => {
 			console.log(error)
 		})
